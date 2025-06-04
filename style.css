@@ -1,0 +1,711 @@
+/* ─────────────────────────────────────────────────────────────────
+   공통 리셋 및 Pretendard 폰트 적용
+───────────────────────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Pretendard Variable', Arial, sans-serif; /* 모든 요소에 Pretendard 적용 */
+}
+
+html,
+body {
+  background-color: #000;
+  color: white;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   .hero 섹션 (배경 이미지 위에 텍스트 오버레이)
+───────────────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 20%;
+  left: 8%;
+  color: white;
+  text-align: left;
+  max-width: 90%;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideUp 1.5s ease-out forwards;
+  pointer-events: none;
+}
+
+.text-overlay h1 {
+  font-weight: 700;
+  font-size: 4.6rem;
+  line-height: 1.1;
+}
+
+.text-overlay p {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+}
+
+.text-overlay2 {
+  position: absolute;
+  top: 10%;
+  left: 8%;
+  color: white;
+  text-align: left;
+  max-width: 90%;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideUp 1.5s ease-out forwards;
+  pointer-events: none;
+}
+
+.text-overlay2 h6 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+.text-overlay2 h2 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.text-overlay2 p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+/* 13번 이미지에만 적용될 딜레이(예: 0.5초) */
+.reveal-generic.delay.animate {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 일반적인 reveal-generic 애니메이션 규칙 */
+.reveal-generic.animate {
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+/* delay가 붙었을 때만 추가 딜레이를 줌 */
+.reveal-generic.delay.animate {
+  animation: fadeSlideUp 0.8s ease-out 0.5s forwards;
+}
+
+.animate {
+  animation: fadeSlideUp 0.7s ease-out forwards;
+}
+
+.text-overlay3 {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.text-overlay3.animate {
+  animation: fadeSlideUp 1s ease-out forwards;
+}
+
+.text-overlay3img1 {
+  top: 36.5%;
+  left: 21%;
+  width: 380px;
+}
+
+.text-overlay3img2 {
+  top: 47.5%;
+  right: 9.5%;
+  width: 425px;
+}
+
+.text-overlay3img3 {
+  top: 62.5%;
+  right: 31.5%;
+  width: 360px;
+}
+
+.text-overlay3img4 {
+  bottom: 12%;
+  left: 14%;
+  width: 430px;
+}
+
+.overlay-container {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  line-height: 1.6;
+}
+
+.overlay-container p {
+  font-size: 0.7rem;
+}
+
+.text-overlay4 {
+  position: absolute;
+  left: 8%;
+  background-color: #ffffff;
+  color: #cdcdcd;
+  z-index: 5;
+}
+
+.text-overlay4:nth-of-type(1) {
+  top: 80px;
+}
+.text-overlay4:nth-of-type(2) {
+  top: 148px;
+}
+.text-overlay4:nth-of-type(3) {
+  top: 217px;
+}
+.text-overlay4:nth-of-type(4) {
+  top: 285px;
+}
+
+.text-overlay5 {
+  position: absolute;
+  left: 8%;
+  background-color: #ffffff;
+  color: #000000;
+  z-index: 5;
+  top: 352px;
+}
+
+.text-overlay6 {
+  position: absolute;
+  left: 0%;
+  background-color: #ffffff;
+  color: #000000;
+  z-index: 5;
+  top: 380px;
+}
+
+.text-overlay7 {
+  position: absolute;
+  left: 43.2%;
+  background-color: #ffffff;
+  color: #000000;
+  z-index: 5;
+  top: 380px;
+}
+
+.overlap-text {
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  z-index: 2;
+}
+
+.overlap-section {
+  position: relative;
+}
+
+.image-containerr {
+  position: absolute;
+  top: 8%;
+  right: 0;
+  width: 71%;
+  z-index: 1;
+}
+
+.image-containerr img {
+  width: 100%;
+  height: auto;
+}
+
+.bg-section {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: url('img/16.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.image-wrap {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.full-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.overlay-text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.overlay-text p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.content-section {
+  padding: 4rem 8%;
+  padding-top: 10%;
+  background-color: #ffffff;
+  color: #000000;
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  pointer-events: auto;
+}
+
+.text-container {
+  max-width: 600px;
+  text-align: left;
+}
+
+.text-container2 {
+  max-width: 1200px;
+  text-align: left;
+  margin-left: auto;
+  margin-bottom: 9%;
+}
+
+.content-section h6 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+.content-section h2 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.content-section p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.highlight-blue {
+  color: blue;
+}
+
+.spacer-130 {
+  height: 130px;
+}
+
+.content-img {
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-image: url('img/7.png');
+  background-position: 39.2%;
+  background-size: 40px;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 0;
+  width: 1150px;
+  margin-left: auto;
+  padding-right: 9%;
+  font-size: 0.8rem;
+}
+
+.reveal-left {
+  width: auto;
+  max-width: 90%;
+  clip-path: inset(0 0 0 100%);
+}
+
+.reveal-left.animate {
+  animation: revealLeftToRight 1.2s ease-out forwards;
+}
+
+.reveal-right {
+  width: auto;
+  max-width: 90%;
+  clip-path: inset(0 100% 0 0);
+}
+
+.reveal-right.animate {
+  animation: revealRightToLeft 1.2s ease-out forwards;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.blur-box {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 40%;
+  height: 0.0001%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+  background-color: rgba(131, 131, 255, 0.5);
+  box-shadow: 0 0 200px 100px rgba(131, 131, 255, 0.3);
+  z-index: 1;
+}
+
+.image-wrapper img {
+  position: relative;
+  z-index: 2;
+}
+
+.image-wrapper2 {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.image-wrapper3 {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.name {
+  padding-top: 10%;
+  text-align: center;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.roles-names {
+  display: flex;
+  gap: 3rem;
+}
+
+.names {
+  text-align: left;
+  flex: 1;
+}
+
+.roles {
+  text-align: right;
+  flex: 1;
+}
+
+.roles p,
+.names p {
+  margin: 0;
+  padding: 0;
+}
+
+.name h1 {
+  font-size: 5.5rem;
+}
+
+.image-wrap {  
+  position: relative;  
+  width: 100%;  
+}
+
+.full-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 20%;
+  left: 27%;
+  max-width: 90%;
+  text-align: left;
+  color: white;
+  font-weight: 300;
+  z-index: 2;
+  background: none;
+  pointer-events: none;
+}
+
+.overlay-text1 {
+  position: absolute;
+  top: 34.5%;
+  left: 14%;
+  max-width: 90%;
+  text-align: left;
+  color: white;
+  font-weight: 300;
+  z-index: 2;
+  background: none;
+  pointer-events: none;
+}
+
+.overlay-text2 {
+  position: absolute;
+  top: 47.9%;
+  left: 37.7%;
+  max-width: 90%;
+  text-align: left;
+  color: white;
+  font-weight: 300;
+  z-index: 2;
+  background: none;
+  pointer-events: none;
+}
+
+.overlay-text3 {
+  position: absolute;
+  top: 69%;
+  left: 35.5%;
+  max-width: 90%;
+  text-align: left;
+  color: white;
+  font-weight: 300;
+  z-index: 2;
+  background: none;
+  pointer-events: none;
+}
+
+.overlay-text4 {
+  position: absolute;
+  top: 88.5%;
+  left: 13%;
+  max-width: 90%;
+  text-align: left;
+  color: white;
+  font-weight: 300;
+  z-index: 2;
+  background: none;
+  pointer-events: none;
+}
+
+.text-box p {
+  line-height: 1.5rem;
+  padding-top: 4%;
+}
+
+.text-box h2 {
+  line-height: 2.7rem;
+}
+
+.text-box2 p {
+  line-height: 1.5rem;
+  padding-top: 4%;
+}
+
+.text-box2 h2 {
+  line-height: 2.7rem;
+}
+
+.text-box3 p {
+  line-height: 1.5rem;
+  padding-top: 4%;
+}
+
+.text-box3 h2 {
+  line-height: 2.7rem;
+}
+
+.text-box1 p {
+  line-height: 1.5rem;
+  padding-top: 4%;
+}
+
+.text-box1 h2 {
+  line-height: 2.7rem;
+}
+
+.text-box4 p {
+  line-height: 1.5rem;
+  padding-top: 4%;
+}
+
+.text-box4 h2 {
+  line-height: 2.7rem;
+}
+
+@keyframes revealLeftToRight {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes revealRightToLeft {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .text-overlay h1 {
+    font-size: 1.8rem;
+  }
+  .text-overlay p {
+    font-size: 1rem;
+  }
+
+  .content-section {
+    padding: 3rem 4%;
+  }
+  .content-section h2 {
+    font-size: 1.6rem;
+  }
+  .content-section p {
+    font-size: 1rem;
+  }
+
+  .text-overlay2 h2 {
+    font-size: 1.6rem;
+  }
+  .text-overlay2 p {
+    font-size: 1rem;
+  }
+
+  .content-img {
+    gap: 1.5rem;
+  }
+  .reveal-left,
+  .reveal-right {
+    max-width: 95%;
+  }
+  .text-overlay3img1 {
+    width: 300px;
+    top: 35%;
+    left: 20%;
+  }
+  .text-overlay3img2 {
+    width: 350px;
+    top: 45%;
+    right: 8%;
+  }
+  .text-overlay3img3 {
+    width: 300px;
+    top: 60%;
+    right: 20%;
+  }
+  .text-overlay3img4 {
+    width: 350px;
+    bottom: 10%;
+    left: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-overlay h1 {
+    font-size: 1.5rem;
+  }
+  .text-overlay p {
+    font-size: 0.9rem;
+  }
+
+  .content-section {
+    padding: 2rem 3%;
+  }
+  .content-section h2 {
+    font-size: 1.3rem;
+  }
+  .content-section p {
+    font-size: 0.9rem;
+  }
+
+  .text-overlay2 h2 {
+    font-size: 1.3rem;
+  }
+  .text-overlay2 p {
+    font-size: 0.9rem;
+  }
+
+  .content-img {
+    gap: 1rem;
+  }
+  .reveal-left,
+  .reveal-right {
+    max-width: 100%;
+  }
+  .text-overlay3img1 {
+    width: 200px;
+    top: 25%;
+    left: 10%;
+  }
+  .text-overlay3img2 {
+    width: 250px;
+    top: 35%;
+    right: 10%;
+  }
+  .text-overlay3img3 {
+    width: 200px;
+    top: 50%;
+    right: 20%;
+  }
+  .text-overlay3img4 {
+    width: 250px;
+    bottom: 8%;
+    left: 8%;
+  }
+}
+
+.responsive-video1 {
+width: 100%;
+padding: 8%;
+padding-top: 12%;
+padding-bottom: 15%;
+background-color: #ffffff;
+}
+
+.responsive-video {
+  position: relative;
+  width: 100%;
+  /* 16:9 비율 예시 → padding-top: 56.25% */
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.responsive-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
