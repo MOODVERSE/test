@@ -1,25 +1,28 @@
-/* ─────────────────────────────────────────────────────────────────
-   브라우저 가로 스크롤 방지 & 전체 스케일링 래퍼
-───────────────────────────────────────────────────────────────── */
 body {
   overflow-x: hidden;
 }
 .scale-wrapper {
-  width: 1525px;                  /* 디자인 기준 너비 */
+  width: 1525px;
   transform-origin: top left;
-  transform: scale(calc(100vw / 1440));
+  transform: scale(calc(100vw / 1525));
+  margin: 0 auto;
 }
-
-/* ─────────────────────────────────────────────────────────────────
-   공통 리셋 및 Pretendard 폰트 적용
-───────────────────────────────────────────────────────────────── */
+@media (max-width: 1524px) {
+  .scale-wrapper {
+    transform: scale(calc(100vw / 1440));
+  }
+}
+@media (min-width: 1525px) {
+  .scale-wrapper {
+    transform: none;
+  }
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Pretendard Variable', Arial, sans-serif;
 }
-
 html,
 body {
   background-color: #000;
@@ -27,10 +30,6 @@ body {
   min-height: 100vh;
   max-width: 100vw;
 }
-
-/* ─────────────────────────────────────────────────────────────────
-   .hero 섹션 (배경 이미지 + 텍스트 오버레이)
-───────────────────────────────────────────────────────────────── */
 .hero {
   position: relative;
   width: 100%;
@@ -63,8 +62,6 @@ body {
   opacity: 0.85;
   margin-bottom: 0.5rem;
 }
-
-/* .text-overlay2 */
 .text-overlay2 {
   position: absolute;
   top: 10%;
@@ -94,8 +91,6 @@ body {
   line-height: 1.6;
   margin-bottom: 0.5rem;
 }
-
-/* 애니메이션 keyframes */
 @keyframes fadeSlideUp {
   from {
     opacity: 0;
@@ -115,8 +110,6 @@ body {
 .animate {
   animation: fadeSlideUp 0.7s ease-out forwards;
 }
-
-/* .text-overlay3 */
 .text-overlay3 {
   position: absolute;
   z-index: 10;
@@ -131,8 +124,6 @@ body {
 .text-overlay3img2 { top: 47.5%; right: 9.5%; width: 425px; }
 .text-overlay3img3 { top: 62.5%; right: 31.5%; width: 360px; }
 .text-overlay3img4 { bottom: 12%; left: 14%; width: 430px; }
-
-/* overlay-container */
 .overlay-container {
   position: relative;
   padding-top: 20px;
@@ -143,8 +134,6 @@ body {
 .overlay-container p {
   font-size: 0.7rem;
 }
-
-/* text-overlay4,5 */
 .text-overlay4 {
   position: absolute;
   left: 8%;
@@ -162,27 +151,22 @@ body {
   z-index: 10;
   color: #000;
 }
-
-/* text-overlay6,7 */
-.text-overlay6 { 
-  position: absolute; 
-  left: 0; 
+.text-overlay6 {
+  position: absolute;
+  left: 0;
   top: 380px;
-  color: #000; 
-  z-index:5; }
-
-.text-overlay7 { 
-  position: absolute; 
-  left: 43.2%; 
-  top: 380px; 
-  color: #000; 
-  z-index:5; }
-
-/* overlap */
+  color: #000;
+  z-index:5;
+}
+.text-overlay7 {
+  position: absolute;
+  left: 43.2%;
+  top: 380px;
+  color: #000;
+  z-index:5;
+}
 .overlap-section { position: relative; }
 .overlap-text { position: absolute; top: 50%; left: 6%; z-index:2; }
-
-/* image-containerr */
 .image-containerr {
   position: absolute;
   top: 8%;
@@ -194,16 +178,12 @@ body {
   width: 100%;
   height: auto;
 }
-
-/* bg-section */
 .bg-section {
   position: relative;
   width: 100%;
   height: 400px;
   background: url('img/16.png') no-repeat center/contain;
 }
-
-/* .image-wrap */
 .image-wrap {
   position: relative;
   width: 100%;
@@ -216,15 +196,15 @@ body {
 }
 .overlay-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #fff;
-  background: rgba(0,0,0,0.4);
-  padding: 1rem;
-  border-radius: 4px;
+  top: 18.5%;
+  left: 14%;
+  max-width: 90%;
+  text-align: left;
+  color: white;
+  font-weight: 300;
   z-index: 2;
+  background: none;
+  pointer-events: none;
 }
 .overlay-text h2 {
   font-size: 2rem;
@@ -235,20 +215,6 @@ body {
   font-size: 1rem;
   opacity: 0.9;
 }
-
-.overlay-text {
-  position: absolute;
-  top: 20%;
-  left: 27%;
-  max-width: 90%;
-  text-align: left;
-  color: white;
-  font-weight: 300;
-  z-index: 2;
-  background: none;
-  pointer-events: none;
-}
-
 .overlay-text1 {
   position: absolute;
   top: 34.5%;
@@ -261,7 +227,6 @@ body {
   background: none;
   pointer-events: none;
 }
-
 .overlay-text2 {
   position: absolute;
   top: 47.9%;
@@ -274,7 +239,6 @@ body {
   background: none;
   pointer-events: none;
 }
-
 .overlay-text3 {
   position: absolute;
   top: 69%;
@@ -287,7 +251,6 @@ body {
   background: none;
   pointer-events: none;
 }
-
 .overlay-text4 {
   position: absolute;
   top: 88.5%;
@@ -300,54 +263,41 @@ body {
   background: none;
   pointer-events: none;
 }
-
 .text-box p {
   line-height: 1.5rem;
   padding-top: 4%;
 }
-
 .text-box h2 {
   line-height: 2.7rem;
 }
-
 .text-box2 p {
   line-height: 1.5rem;
   padding-top: 4%;
 }
-
 .text-box2 h2 {
   line-height: 2.7rem;
 }
-
 .text-box3 p {
   line-height: 1.5rem;
   padding-top: 4%;
 }
-
 .text-box3 h2 {
   line-height: 2.7rem;
 }
-
 .text-box1 p {
   line-height: 1.5rem;
   padding-top: 4%;
 }
-
 .text-box1 h2 {
   line-height: 2.7rem;
 }
-
 .text-box4 p {
   line-height: 1.5rem;
   padding-top: 4%;
 }
-
 .text-box4 h2 {
   line-height: 2.7rem;
 }
-
-
-/* content-section */
 .content-section {
   padding: 4rem 8%;
   background-color: #fff;
@@ -384,8 +334,6 @@ body {
 }
 .highlight-blue { color: blue; }
 .spacer-130 { height: 130px; }
-
-/* content-img */
 .content-img {
   position: relative;
   overflow: hidden;
@@ -400,8 +348,6 @@ body {
   padding-right: 9%;
   font-size: 0.8rem;
 }
-
-/* reveal-left/right */
 .reveal-left {
   width: auto;
   max-width: 90%;
@@ -426,13 +372,13 @@ body {
   from { clip-path: inset(0 100% 0 0); }
   to   { clip-path: inset(0 0 0 0); }
 }
-
-/* image-wrapper + blur-box */
 .image-wrapper {
   position: relative;
   display: inline-block;
+  overflow: hidden;
 }
 .blur-box {
+  overflow: hidden;
   position: absolute;
   top: 70%;
   left: 50%;
@@ -446,26 +392,26 @@ body {
 }
 .image-wrapper img {
   position: relative;
+  overflow: hidden;
   z-index: 2;
 }
-
-/* image-wrapper2,3 */
 .image-wrapper2 {
+  overflow: hidden;
   position: relative;
   width: 100%;
 }
 .image-wrapper3 {
+  overflow: hidden;
   position: relative;
   text-align: center;
 }
-
-/* name 섹션 */
 .name {
   padding-top: 10%;
   text-align: center;
   background-color: #fff;
   color: #000;
 }
+
 .roles-names {
   display: flex;
   gap: 3rem;
@@ -487,7 +433,6 @@ body {
   font-size: 5.5rem;
 }
 
-/* responsive-video */
 .responsive-video1 {
   width: 100%;
   padding: 8%;
